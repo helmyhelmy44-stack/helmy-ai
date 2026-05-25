@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helmy AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="settings" onclick="togglePanel()">⚙️</div>
+    
+    <div class="overlay" id="overlay" onclick="togglePanel()"></div>
+    
+    <div class="panel" id="panel">
+        <h3> الإعدادات</h3>
+        <input type="password" id="apiKey" placeholder="مفتاح OpenRouter API">
+        <select id="model">
+            <option value="google/gemini-2.0-flash-exp:free"> Gemini 2.0 Flash (مجاني)</option>
+            <option value="deepseek/deepseek-chat:free"> DeepSeek V3 (مجاني)</option>
+            <option value="nvidia/llama-3.1-nemotron-70b-instruct:free"> Nemotron 70B (مجاني)</option>
+        </select>
+        <button onclick="saveSettings()"> حفظ الإعدادات</button>
+    </div>
 
+    <div class="header">
+        <div class="logo">H</div>
+        <div>
+            <h1>Helmy AI</h1>
+            <small>مساعدك الذكي الشخصي</small>
+        </div>
+    </div>
+
+    <div class="chat" id="chat">
+        <div class="welcome">
+            <h2> مرحباً!</h2>
+            <p>أنا Helmy AI، مساعدك الذكي.</p>
+            <p>اكتب أي سؤال وسأساعدك.</p>
+        </div>
+    </div>
+
+    <div class="input-area">
+        <input type="text" id="input" placeholder="اكتب رسالتك هنا..." autocomplete="off" onkeydown="if(event.key==='Enter') send()">
+        <button onclick="send()">إرسال</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
